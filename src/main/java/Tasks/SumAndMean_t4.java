@@ -10,7 +10,10 @@ public class SumAndMean_t4 {
 
     private static void printAndCalculate() {
         Scanner scanner = new Scanner(System.in);
-        int inputNumber, counter = 0, sum = 0;
+        int inputNumber;
+        int counter = 0;
+        int sum = 0;
+
         double mean;
         while (true) {
             System.out.println("give me a nr");
