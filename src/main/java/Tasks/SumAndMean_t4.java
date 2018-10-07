@@ -11,8 +11,8 @@ public class SumAndMean_t4 {
     private static void printAndCalculate() {
         Scanner scanner = new Scanner(System.in);
         int inputNumber;
-        int counter = 0;
-        int sum = 0;
+        double counter = 0;
+        double sum = 0;
 
         double mean;
         while (true) {

@@ -1,9 +1,8 @@
-//package Tasks;
-//
-//public class RumOfDivisiors {
-//
-//    public static void main(String[] args) {
-//        int n;
-//
-//    }
-//}
+package Tasks;
+
+public class RumOfDivisiors {
+
+    public static void main(String[] args) {
+
+    }
+}
