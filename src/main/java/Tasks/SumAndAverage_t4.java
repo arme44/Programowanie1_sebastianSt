@@ -2,7 +2,7 @@ package Tasks;
 
 import java.util.Scanner;
 
-public class SumAndMean_t4 {
+public class SumAndAverage_t4 {
 
     public static void main(String[] args) {
         printAndCalculate();
@@ -14,7 +14,7 @@ public class SumAndMean_t4 {
         double counter = 0;
         double sum = 0;
 
-        double mean;
+        double average;
         while (true) {
             System.out.println("give me a nr");
             inputNumber = scanner.nextInt();
@@ -22,9 +22,9 @@ public class SumAndMean_t4 {
                 sum += inputNumber;
                 counter++;
             } else {
-                mean = sum / counter;
+                average = sum / counter;
                 System.out.println("Sum = " + sum);
-                System.out.println("Mean = " + mean);
+                System.out.println("Mean = " + average);
                 return;
             }
         }
