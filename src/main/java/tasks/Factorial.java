@@ -1,4 +1,4 @@
-package Tasks;
+package tasks;
 
 import java.util.Scanner;
 
@@ -19,7 +19,7 @@ public class Factorial {
     private static int calculate(int i) {
         if (i <= 1)
             return 1;
-        
+
         return i * calculate(i - 1);
     }
 }
