@@ -2,54 +2,45 @@ package tasks;
 
 import java.util.Scanner;
 
-    public class CezarCipher {
+public class CezarCipher {
 
-        public static final int ALPHABET_LENTH = 26;
+    private static final int ALPHABET_LENTH = 26;
 
-        public static void main(String[] args) {
-            String plainText = getInputText();
+    public static void main(String[] args) {
+        String plainText = getInputText();
 
-            final int shift = 3;
-            String encriptedText = encrypt(plainText, shift);
-            String decryptedText = decrypt(plainText, shift);
+        final int shift = 3;
+        String encriptedText = encrypt(plainText, shift, true);
+        String decryptedText = encrypt(encriptedText, shift, false);
 
-            System.out.println("encriptedText: " + encriptedText);
-        }
-
-        private static String getInputText() {
-            Scanner scanner = new Scanner(System.in);
-            return scanner.nextLine();
-        }
-
-        private static String encrypt(String text, int shift) {
-
-            String result = "";
-            for (int i = 0; i < text.length(); i++) {
-                result += getShiftedChar(text.charAt(i), shift);
-            }
-            return result;
-        }
-
-        private static char getShiftedChar(char cipherChar, int shift) {
-            int charValue = (int)cipherChar;
-
-            if(cipherChar == ' '){
-                return ' ';
-            }
-
-//        if (cipherChar <= 'A' + ALPHABET_LENTH - shift) {
-//            return (char) (charValue + shift);
-//        } else {
-//            return (char)((int)charValue - ALPHABET_LENTH + shift);
-//        }
-
-            return (char) (((charValue + shift - 'A') % ALPHABET_LENTH) + 'A');
-
-        }
-
-        private static String decrypt(String text, int shift) {
-            return null;
-        }
-
-
+        System.out.println("encriptedText: " + encriptedText);
+        System.out.println("decryptedText: " + decryptedText);
     }
+
+    private static String getInputText() {
+        System.out.println("Podaj tekst do zaszyfrowania: ");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+
+    private static String encrypt(String text, int shift, boolean isEncrypt) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            result.append(getShiftedChar(text.charAt(i), shift, isEncrypt));
+        }
+        return result.toString();
+    }
+
+    private static char getShiftedChar(char cipherChar, int shift, boolean isEncript) {
+        int charValue = (int)cipherChar;
+
+        if (cipherChar == ' ') {
+            return ' ';
+        }
+
+        if (isEncript) {
+            return (char) (((charValue + shift - 'A') % ALPHABET_LENTH) + 'A');
+        }
+        return (char) (((charValue - shift + 'A') % ALPHABET_LENTH) + 'A');
+    }
+}
