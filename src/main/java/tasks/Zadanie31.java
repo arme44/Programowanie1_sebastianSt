@@ -12,6 +12,7 @@ public class Zadanie31 {
         if (checkInputNumbersIsIncorrect(n)) return;
 
         printNumberSequence1(n);
+
         System.out.println();
         System.out.println("----------------------------------");
         printNumberSequence2(n);
